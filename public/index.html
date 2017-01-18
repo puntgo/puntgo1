@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="puntgo">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10">
+  <head>
+    <title>PuntGo</title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+  </head>
+  <body data-ng-controller="homePageController">
+    <div data-ng-include src="'header.html'"></div>
+    <div data-ng-include src="'body.html'"></div>
+    <!-- dynamic view -->
+    <div ng-view></div>
+  <footer>footer</footer>
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="../node_modules/angular-route/angular-route.min.js"></script>
+  <script src="angular/homepage.js"></script>
+</body>
+</html>
