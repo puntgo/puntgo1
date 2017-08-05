@@ -1,0 +1,40 @@
+<style type="text/css">
+div.show-image {
+    position: relative;
+    float: left;
+}
+
+div.show-image:hover img {
+    opacity: 0.5;
+}
+
+div.show-image:hover i {
+    display: block;
+}
+
+div.show-image i {
+    position: absolute;
+    display: none;
+}
+
+div.show-image i.fa-play-circle {
+    top: 25%;
+    left: 45%;
+}
+</style>
+<div class="container-fluid" style="background-color: #f8f8f8">
+    <div class="row" ng-controller='playlistController as plc'>
+        <ul class="list-unstyled">
+            <li ng-repeat="play in playlist">
+                    <a href={{play.url}}>
+                     {{play.title}}
+                    </a>
+                    <button type="button" class="close" aria-label="Close"  ng-click="removeFromPlaylist(play)" >
+  						<span aria-hidden="true">&times;</span>
+					</button>
+            </li>
+        </ul>
+    </div>
+</div>
+</h1>
+</div>

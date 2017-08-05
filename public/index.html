@@ -1,19 +1,74 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="puntgo">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10">
-  <head>
+<html lang="en" ng-app="puntgo">
+<base href="/">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
     <title>PuntGo</title>
-    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
-  </head>
-  <body data-ng-controller="homePageController">
-    <div data-ng-include src="'header.html'"></div>
-    <div data-ng-include src="'body.html'"></div>
-    <!-- dynamic view -->
-    <div ng-view></div>
-  <footer>footer</footer>
-  <script src="../node_modules/angular/angular.min.js"></script>
-  <script src="../node_modules/angular-route/angular-route.min.js"></script>
-  <script src="angular/homepage.js"></script>
+    <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome\css\font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css">
+</head>
+
+<body data-ng-controller="homePageController">
+    <header>
+        <div data-ng-include src="'header.html'"></div>
+    </header>
+    <div class="row">
+        <div class="col-md-3">
+            <div id="sidebartab">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#1a" data-toggle="tab">Top Listed</a>
+                    </li>
+                    <li><a href="#2a" data-toggle="tab">Playlist</a>
+                    </li>
+                </ul>
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="1a">
+                        <div data-ng-include src="'queue.html'"></div>
+                    </div>
+                    <div class="tab-pane" id="2a">
+                        <div ng-if="loadPlaylist">
+                            <div data-ng-include src="'playlist.html'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- dynamic view -->
+        <div class="col-md-9">
+            <div ng-view></div>
+        </div>
+
+        </div>
+        
+        <footer class="footer">
+            <div data-ng-include src="'player.html'"></div>
+        </footer>
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="lib/wavesurfer.js/dist/wavesurfer.min.js"></script>
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/angular-route/angular-route.min.js"></script>
+        <script src="lib/ngProgress/ngprogress.min.js"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="angular/routes/puntgo.route.js"></script>
+        <script src="lib/lyrics.js/lyrics.min.js"></script>
+        <script src="angular/services/homepage-service.js"></script>
+        <script src="angular/services/main-service.js"></script>
+        <script src="angular/services/queue-service.js"></script>
+        <script src="angular/services/tracklist-service.js"></script>
+        <script src="angular/services/playlist-service.js"></script>
+        <script src="angular/controllers/homepage-controller.js"></script>
+        <script src="angular/controllers/main-controller.js"></script>
+        <script src="angular/controllers/tracklist-controller.js"></script>
+        <script src="angular/controllers/queue-controller.js"></script>
+        <script src="angular/controllers/playlist-controller.js"></script>
+        <script src="assets/js/player.js"></script>
+        <script src="javascripts/util.js"></script>
 </body>
+
 </html>

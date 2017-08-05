@@ -1,0 +1,185 @@
+<style type="text/css">
+/*Album information */
+
+.card {
+    margin-top: 20px;
+    padding: 30px;
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 215px;
+    margin-bottom: 5px; 
+}
+
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.card.hovercard .card-background {
+    height: 130px;
+}
+
+.card-background img {
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+    margin-left: -100px;
+    margin-top: -200px;
+    min-width: 130%;
+}
+
+.card.hovercard .useravatar {
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+.card.hovercard .useravatar img {
+    width: 165px;
+    height: 100%;
+    max-width: 165px;
+    max-height: 215px;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+    border-radius: 2%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card.hovercard .card-info {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+}
+
+.card.hovercard .card-info .card-title {
+    padding: 0 5px;
+    font-size: 20px;
+    line-height: 1;
+    color: #262626;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.card.hovercard .card-info {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+
+
+/*  Songs List*/
+
+.label-right {
+    float: right;
+    font-size: 0.7em;
+}
+
+.update-nag {
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    height: 55px;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.update-nag:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .4);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .3);
+}
+
+.update-nag > .update-split {
+    background: #337ab7;
+    width: 40px;
+    float: left;
+    color: #fff!important;
+    height: 100%;
+    text-align: center;
+}
+
+.update-nag > .update-split > .glyphicon {
+    position: relative;
+    top: calc(50% - 9px)!important;
+    /* 50% - 3/4 of icon height */
+}
+
+.update-nag > .update-split.update-success {
+    background: #5cb85c!important;
+}
+
+.update-nag > .update-split.update-danger {
+    background: #d9534f!important;
+}
+
+.update-nag > .update-split.update-info {
+    background: #5bc0de!important;
+}
+
+.update-nag > .update-text {
+    line-height: 19px;
+    padding-top: 11px;
+    padding-left: 45px;
+    padding-right: 20px;
+}
+</style>
+<div class="container">
+    <div class='row'>
+        <div class="col-md-8">
+            <div class="card hovercard">
+                <div class="card-background">
+                    <img class="card-bkimg" alt="" ng-src="{{tlc.trackInfo.url}}">
+                </div>
+                <div class="useravatar">
+                    <img alt="" ng-src="{{tlc.trackInfo.url}}">
+                </div>
+                <div class="card-info"> <span class="card-title">{{tlc.trackInfo.title}}</span>
+                </div>
+            </div>
+            <div class="row" ng-repeat="songsInfo in tlc.trackInfo.songs">
+                <div class="col-md-12">
+                    <div class="update-nag">
+                        <div class="update-split" ng-click="tlc.playOnly(songsInfo)">
+                            <i class="glyphicon glyphicon-play"></i>
+                        </div>
+                        <div class="update-text">
+                            <a>
+                                <h4 class="list-group-item-heading">
+                        {{songsInfo.title}}
+                        <span class="label-right">
+                        <i class="fa fa-plus-circle fa-2x" aria-hidden="true" title="Add to Playlist" ng-click='tlc.addToList(songsInfo)'></i>
+                            {{songsInfo.length}}
+                        </span>
+                        <br>
+                     <small style="font-size: .6em;">{{songsInfo.artistName}}</small>
+                    </h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

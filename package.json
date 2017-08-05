@@ -8,14 +8,24 @@
   "dependencies": {
     "angular": "^1.6.1",
     "angular-route": "^1.6.1",
+    "bluebird": "^3.4.7",
     "body-parser": "~1.15.2",
     "bootstrap": "^3.3.7",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
+    "font-awesome": "^4.7.0",
+    "id3": "0.0.3",
     "jquery": "^3.1.1",
+    "lyrics.js": "^0.3.5",
+    "mediaserver": "0.0.9",
+    "mongodb": "^2.2.21",
+    "mongoose": "^4.7.8",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "multer": "^1.1.0",
+    "ng-infinite-scroll": "^1.3.0",
+    "serve-favicon": "~2.3.0",
+    "wavesurfer.js": "^1.3.0"
   }
 }
