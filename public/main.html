@@ -1,65 +1,17 @@
-<head>
-    <style type="text/css">
-    .card-container {
-        width: 160px;
-        height: 160px;
-        cursor: pointer;
-        -webkit-box-shadow: 0 0 5px #ddd;
-        box-shadow: 0 0 5px #ddd;
-        overflow: hidden;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px;
-    }
-    
-    .thumbnail-pic {
-        height: 160px;
-        width: 160px;
-    }
-    
-    .card-container:hover {
-        box-shadow: 0 0 5px #286090;
-    }
-
-    .col-xs-15 {
-        width: 20%;
-        float: left;
-        margin-bottom: 10px;
-    }
-    @media (min-width: 768px) {
-    .col-sm-15 {
-            width: 20%;
-            float: left;
-            margin-bottom: 10px;
-        }
-    }
-    @media (min-width: 992px) {
-        .col-md-15 {
-            width: 20%;
-            float: left;
-            margin-bottom: 10px;
-        }
-    }
-    @media (min-width: 1200px) {
-        .col-lg-15 {
-            width: 20%;
-            float: left;
-            margin-bottom: 10px;
-    }
-}
-    </style>
-</head>
-<div class="row">
-    <div class=' col-sm-15 col-md-15 col-lg-15' ng-repeat="album in albumsList">
-        <a ng-href="#/hindi/{{album.title}}">
-            <div class="card-container">
-                <img ng-src={{album.url}} class="thumbnail-pic">
-            </div>
-            <div class="card-block">
-                <h5 class="card-title"> {{album.title}} ({{album.year}})</h5>
-            </div>
-        </a>
-    </div>
+<div class="container-fluid">
+    <fieldset>
+      <legend>New Releases
+        <span style="float:right;">X</span>
+      </legend>
+    </fieldset>
+        <div class="col-xs-4 col-sm-5 col-md-5"  ng-repeat="album in albumsList | limitTo:5">
+            <a ng-href="#/hindi/{{album.title}}">
+                <div class="card-container">
+                    <img ng-src={{album.url}} class="img-responsive thumbnail-pic" >
+                </div>
+                <div class="card-block">
+                    <h5 class="card-title"> {{album.title}} ({{album.year}})</h5>
+                </div>
+            </a>
+        </div>
 </div>

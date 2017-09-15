@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('puntgo', ['ngRoute'])
+        .module('puntgo', ['ngRoute','ui.bootstrap'])
         .config(config).run(run);
 
     config.$inject = ['$routeProvider', '$locationProvider'];

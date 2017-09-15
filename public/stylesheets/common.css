@@ -134,3 +134,86 @@ Nprogress start Make clicks pass-through */
 #sidebartab .nav-pills > li > a {
   border-radius: 0;
 }
+
+
+
+
+
+
+/*start of main.html*/
+    .card-container {
+        width: 160px;
+        height: 160px;
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 5px #ddd;
+        box-shadow: 0 0 5px #ddd;
+        overflow: hidden;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+    }
+    
+    .thumbnail-pic {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .card-container:hover {
+        box-shadow: 0 0 5px #286090;
+    }
+
+    .col-lg-5 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .col-xs-5 {
+        width: 20%;
+        float: left;
+    }
+
+    @media (min-width: 768px) {
+        .col-sm-5 {
+            width: 20%;
+            float: left;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .col-md-5 {
+            width: 20%;
+            float: left;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .col-lg-5 {
+            width: 20%;
+            float: left;
+        }
+    }
+
+/*end of main.html*/
+
+
+
+/*Start of modal.html*/
+.center-modal {
+    position: fixed;
+    top: 10%;
+    left: 18.5%;
+    z-index: 1050;
+    width: 80%;
+    height: 80%;
+    margin-left: -10%;
+}
+
+/*end of modal.html*/
+
+
+
+
